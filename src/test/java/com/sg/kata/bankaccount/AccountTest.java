@@ -19,7 +19,7 @@ public class AccountTest {
 	}
 	
 	@Test
-	public void should_success_deposit_50()
+	public void should_success_deposit_50() throws InvalidBankTransactionException
 	{
         final long amount = 50L;
         account.deposit(new Amount(amount));
@@ -31,7 +31,7 @@ public class AccountTest {
 	public void should_throw_exception_when_invalid_bank_transaction() 
 			throws InvalidBankTransactionException 
 	{
-		long amount = -50L;
+		final long amount = -50L;
         account.deposit(new Amount(amount));
         Assert.fail();
     }
