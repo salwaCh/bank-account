@@ -10,6 +10,9 @@ public class Account {
 		}
 		balance = balance.update(OperationType.DEPOSIT, amount);
 	}
+	
+	public void withdraw(Amount amount) {
+	}
 
 	public Balance getBalance() {
 		return balance;
