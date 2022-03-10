@@ -11,7 +11,8 @@ public class Account {
 		balance = balance.update(OperationType.DEPOSIT, amount);
 	}
 	
-	public void withdraw(Amount amount) {
+	public void withdraw(final Amount amount) {
+		balance = balance.update(OperationType.WITHDRAWAL, amount);
 	}
 
 	public Balance getBalance() {

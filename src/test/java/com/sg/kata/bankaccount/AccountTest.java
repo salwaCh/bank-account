@@ -43,7 +43,7 @@ public class AccountTest {
     	account.deposit(new Amount(100L));
     	account.deposit(new Amount(300L));
     	account.withdraw(new Amount(100L));
-    	Balance expectedBalance = new Balance(300L);
+    	final Balance expectedBalance = new Balance(300L);
     	assertEquals(expectedBalance, account.getBalance());
     }
 }
