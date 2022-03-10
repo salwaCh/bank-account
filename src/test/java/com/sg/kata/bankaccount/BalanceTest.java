@@ -2,7 +2,6 @@ package com.sg.kata.bankaccount;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;

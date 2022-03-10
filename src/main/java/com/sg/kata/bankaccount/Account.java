@@ -2,6 +2,9 @@ package com.sg.kata.bankaccount;
 
 import java.time.LocalDateTime;
 
+import lombok.Data;
+
+@Data
 public class Account {
 
 	private TransactionHistory transactionHistory = new TransactionHistory();
@@ -23,10 +26,6 @@ public class Account {
 		transactionHistory.addTransaction(OperationType.DEPOSIT, LocalDateTime.now(), amount, balance);
 	}
 
-	public Balance getBalance() {
-		return balance;
-	}
-	
 	public void printTransactionHistory(final TransactionPrinter transactionPrinter) {
 		transactionHistory.getTransactionHistoryDetail(transactionPrinter);
 	}
