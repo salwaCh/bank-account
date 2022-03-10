@@ -8,4 +8,11 @@ public class Balance {
 		super();
 		this.balanceAfterOperation = balanceAfterOperation;
 	}
+	
+	public Balance update(final OperationType operationType, final Amount amount) {
+		if(OperationType.DEPOSIT.equals(operationType)) {
+			return new Balance(balanceAfterOperation + amount.getAmount());
+		}
+		throw new IllegalArgumentException("Operation is not supported");
+	}
 }
