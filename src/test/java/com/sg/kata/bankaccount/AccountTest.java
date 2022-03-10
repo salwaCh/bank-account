@@ -1,6 +1,8 @@
 package com.sg.kata.bankaccount;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,5 +25,14 @@ public class AccountTest {
         account.deposit(new Amount(amount));
         final Balance expectedBalance = new Balance(50L);
         assertEquals(expectedBalance, account.getBalance());
+    }
+	
+	@Test(expected = InvalidBankTransactionException.class)
+	public void should_throw_exception_when_invalid_bank_transaction() 
+			throws InvalidBankTransactionException 
+	{
+		long amount = -50L;
+        account.deposit(new Amount(amount));
+        Assert.fail();
     }
 }
