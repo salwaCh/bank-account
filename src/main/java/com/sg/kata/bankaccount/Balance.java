@@ -17,6 +17,10 @@ public class Balance {
 		}
 		throw new IllegalArgumentException("Operation is not supported");
 	}
+	
+	public long getBalanceAfterOperation() {
+		return balanceAfterOperation;
+	}
 
 	@Override
 	public int hashCode() {
