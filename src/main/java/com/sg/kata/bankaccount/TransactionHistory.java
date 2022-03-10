@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TransactionHistory {
 
-	private List<Transaction> transactions = new LinkedList<Transaction>();
+	private List<Transaction> transactions = new LinkedList<>();
 
 	public void addTransaction(final OperationType operationType, 
 							   final LocalDateTime date, 
@@ -14,5 +14,9 @@ public class TransactionHistory {
 							   final Balance balance) 
 	{
 		this.transactions.add(new Transaction(operationType, date, amount, balance));
+	}
+	
+	public void getTransactionHistoryDetail(final TransactionPrinter transactionPrinter) {
+		transactions.stream().forEach(transaction -> transactionPrinter.print(transaction));
 	}
 }

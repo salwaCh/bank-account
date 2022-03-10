@@ -28,6 +28,6 @@ public class Account {
 	}
 	
 	public void printTransactionHistory(final TransactionPrinter transactionPrinter) {
-
+		transactionHistory.getTransactionHistoryDetail(transactionPrinter);
 	}
 }
